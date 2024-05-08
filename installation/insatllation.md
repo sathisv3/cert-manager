@@ -5,7 +5,7 @@ Cert-manager Installation
 helm repo add jetstack https://charts.jetstack.io --force-update
 
 # helm repo update
-helm repo update
+''' helm repo update '''
 
 ## Install CRDs with kubectl 
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.14.5/cert-manager.crds.yaml
