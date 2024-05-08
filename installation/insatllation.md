@@ -29,17 +29,19 @@ Reflector Installation
 <https://technotim.live/posts/k8s-reflector/>
 
 ### helm repo for 
-    elm repo add emberstack https://emberstack.github.io/helm-charts
+    helm repo add emberstack https://emberstack.github.io/helm-charts
 
+### helm repo update 
     helm repo update
 
+### install reflector by using helm 
     helm upgrade --install reflector emberstack/reflector -n cert-manager
 
 
 Create certificate
 ==================
 
-create the cloud flare tocken secret 
+### create the cloud flare tocken secret 
 
 ```yaml
 apiVersion: v1
@@ -53,7 +55,7 @@ stringData:
   cloudflare-token: 1231bc  # cloudflar tocken need to be attach
 ```
 
-create the cluster issuer with the cloud flare tocken secret
+### create the cluster issuer with the cloud flare tocken secret
 
 ```yaml
 apiVersion: cert-manager.io/v1
@@ -80,7 +82,7 @@ spec:
 ```
 
 
-create certificate by using the cloudflare tocken secret and the cluster issuer reference
+### create certificate by using the cloudflare tocken secret and the cluster issuer reference
 
 ```yaml
 apiVersion: cert-manager.io/v1
